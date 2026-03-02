@@ -1,4 +1,4 @@
-import { House, Gear, User, Receipt, type IconProps } from '@phosphor-icons/react';
+import { House, Gear, User, Ticket, type IconProps } from '@phosphor-icons/react';
 import type { ComponentType } from 'react';
 
 export interface NavigationItem {
@@ -10,6 +10,6 @@ export interface NavigationItem {
 export const navigationItems: NavigationItem[] = [
   { name: 'Home', href: '/home', icon: House },
   { name: 'Profile', href: '/profile', icon: User },
-  { name: 'Transactions', href: '/transactions', icon: Receipt },
+  { name: 'My Bets', href: '/my-bets', icon: Ticket },
   { name: 'Settings', href: '/settings', icon: Gear },
 ];

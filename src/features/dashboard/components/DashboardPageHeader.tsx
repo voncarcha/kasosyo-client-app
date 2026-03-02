@@ -5,7 +5,7 @@ import { useLocation } from '@tanstack/react-router';
 const pageInfo: Record<string, { title: string; description: string }> = {
   '/home': { title: 'Home', description: 'Welcome to your dashboard' },
   '/profile': { title: 'Profile', description: 'Manage your account settings' },
-  '/transactions': { title: 'Transactions', description: 'View your transaction history' },
+  '/my-bets': { title: 'My Bets', description: 'View your betting history' },
   '/settings': { title: 'Settings', description: 'Manage your preferences' },
 };
 

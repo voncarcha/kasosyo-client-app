@@ -1,4 +1,4 @@
-export function TransactionsPage() {
+export function MyBetsPage() {
   return (
     <div className="p-6">
       <div className="space-y-4">
