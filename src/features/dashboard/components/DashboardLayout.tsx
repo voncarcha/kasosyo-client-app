@@ -6,6 +6,7 @@ import { DashboardBottomNav } from './DashboardBottomNav';
 import { useAuthStore } from '@/features/auth/store/auth-store';
 import { useEffect } from 'react';
 import { useNavigate } from '@tanstack/react-router';
+import { FloatingButton, QRScannerModal } from '@/features/ticket-scanner';
 
 export function DashboardLayout() {
   const navigate = useNavigate();
@@ -35,6 +36,8 @@ export function DashboardLayout() {
         </div>
       </div>
       <DashboardBottomNav />
+      <FloatingButton />
+      <QRScannerModal />
     </div>
   );
 }

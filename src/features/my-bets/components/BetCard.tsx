@@ -69,13 +69,28 @@ export function BetCard({ bet, onSeeDetails }: BetCardProps) {
         )}
       </div>
 
-      <button
-        onClick={() => onSeeDetails(bet)}
-        className="w-full flex items-center justify-start gap-1 py-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
-      >
-        See Details
-        <CaretRight className="h-4 w-4" weight="bold" />
-      </button>
+      <div className="flex items-center justify-between">
+        {bet.status === 'WON' ? (
+          <button
+            onClick={() => {
+              // TODO: Implement cash out functionality
+              console.log('Cash out bet:', bet.id);
+            }}
+            className="px-4 py-2 text-sm font-medium rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+          >
+            Cash Out
+          </button>
+        ) : (
+          <div />
+        )}
+        <button
+          onClick={() => onSeeDetails(bet)}
+          className="flex items-center gap-1 py-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+        >
+          See Details
+          <CaretRight className="h-4 w-4" weight="bold" />
+        </button>
+      </div>
     </div>
   );
 }

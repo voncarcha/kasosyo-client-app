@@ -134,20 +134,32 @@ export function BetDetailsSheet({ bet, isOpen, onClose }: BetDetailsSheetProps) 
             )}
           </div>
 
-          <div>
-            <h4 className="text-sm font-medium text-muted-foreground mb-2">
-              Selections ({bet.selections.length})
-            </h4>
-            <div className="space-y-2">
-              {bet.selections.map((selection) => (
-                <SelectionItem key={selection.id} selection={selection} />
-              ))}
+            <div>
+              <h4 className="text-sm font-medium text-muted-foreground mb-2">
+                Selections ({bet.selections.length})
+              </h4>
+              <div className="space-y-2">
+                {bet.selections.map((selection) => (
+                  <SelectionItem key={selection.id} selection={selection} />
+                ))}
+              </div>
             </div>
+
+            {bet.status === 'WON' && (
+              <button
+                onClick={() => {
+                  // TODO: Implement cash out functionality
+                  console.log('Cash out bet:', bet.id);
+                }}
+                className="w-full px-4 py-3 text-sm font-medium rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+              >
+                Cash Out
+              </button>
+            )}
           </div>
         </div>
-      </div>
 
-      <div
+        <div
         className={cn(
           'hidden lg:flex fixed inset-0 z-50 items-center justify-center p-4',
           isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
@@ -210,6 +222,18 @@ export function BetDetailsSheet({ bet, isOpen, onClose }: BetDetailsSheetProps) 
                 ))}
               </div>
             </div>
+
+            {bet.status === 'WON' && (
+              <button
+                onClick={() => {
+                  // TODO: Implement cash out functionality
+                  console.log('Cash out bet:', bet.id);
+                }}
+                className="w-full px-4 py-3 text-sm font-medium rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+              >
+                Cash Out
+              </button>
+            )}
           </div>
         </div>
       </div>

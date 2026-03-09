@@ -32,7 +32,7 @@ export function MyBetsPage() {
       <FilterTabs activeFilter={activeFilter} onFilterChange={setActiveFilter} />
 
       <div className="flex-1 overflow-y-auto">
-        <div className="p-4 space-y-3 pb-8">
+        <div className="p-4 space-y-3 pb-28">
           {filteredBets.length > 0 ? (
             filteredBets.map((bet) => (
               <BetCard key={bet.id} bet={bet} onSeeDetails={handleSeeDetails} />
