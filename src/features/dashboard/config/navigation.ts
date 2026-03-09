@@ -9,7 +9,7 @@ export interface NavigationItem {
 
 export const navigationItems: NavigationItem[] = [
   { name: 'Home', href: '/home', icon: House },
-  { name: 'Profile', href: '/profile', icon: User },
   { name: 'My Bets', href: '/my-bets', icon: Ticket },
+  { name: 'Profile', href: '/profile', icon: User },
   { name: 'Settings', href: '/settings', icon: Gear },
 ];

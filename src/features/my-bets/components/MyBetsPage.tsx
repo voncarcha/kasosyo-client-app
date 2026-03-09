@@ -1,18 +1,59 @@
+import { useState } from 'react';
+import { FadersHorizontal } from '@phosphor-icons/react';
+import { PointsHeader } from './PointsHeader';
+import { FilterTabs } from './FilterTabs';
+import { BetCard } from './BetCard';
+import { BetDetailsSheet } from './BetDetailsSheet';
+import { mockBets } from '../data/mock-bets';
+import type { Bet, BetFilter } from '../types/bet';
+
 export function MyBetsPage() {
+  const [activeFilter, setActiveFilter] = useState<BetFilter>('ALL');
+  const [selectedBet, setSelectedBet] = useState<Bet | null>(null);
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
+
+  const filteredBets = mockBets.filter((bet) => {
+    if (activeFilter === 'ALL') return true;
+    return bet.status === activeFilter;
+  });
+
+  const handleSeeDetails = (bet: Bet) => {
+    setSelectedBet(bet);
+    setIsSheetOpen(true);
+  };
+
+  const handleCloseSheet = () => {
+    setIsSheetOpen(false);
+  };
+
   return (
-    <div className="p-6">
-      <div className="space-y-4">
-        {[1, 2, 3, 4, 5].map((i) => (
-          <div key={i} className="border border-border rounded-lg p-4 bg-card flex items-center gap-4">
-            <div className="h-10 w-10 bg-muted rounded-full flex-shrink-0" />
-            <div className="flex-1">
-              <div className="h-4 w-32 bg-muted rounded mb-2" />
-              <div className="h-3 w-24 bg-muted rounded" />
+    <div className="flex flex-col h-full">
+      <PointsHeader />
+      <FilterTabs activeFilter={activeFilter} onFilterChange={setActiveFilter} />
+
+      <div className="flex-1 overflow-y-auto">
+        <div className="p-4 space-y-3 pb-8">
+          {filteredBets.length > 0 ? (
+            filteredBets.map((bet) => (
+              <BetCard key={bet.id} bet={bet} onSeeDetails={handleSeeDetails} />
+            ))
+          ) : (
+            <div className="flex flex-col items-center justify-center py-16 text-center">
+              <FadersHorizontal className="h-12 w-12 text-muted-foreground mb-4" />
+              <p className="text-muted-foreground">No bets found</p>
+              <p className="text-sm text-muted-foreground/70 mt-1">
+                Try selecting a different filter
+              </p>
             </div>
-            <div className="h-5 w-16 bg-muted rounded" />
-          </div>
-        ))}
+          )}
+        </div>
       </div>
+
+      <BetDetailsSheet
+        bet={selectedBet}
+        isOpen={isSheetOpen}
+        onClose={handleCloseSheet}
+      />
     </div>
   );
 }

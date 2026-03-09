@@ -1,18 +1,32 @@
+import { Trophy, TrendUp } from '@phosphor-icons/react';
+import { StatCard } from './StatCard';
+import { BetCountChart } from './BetCountChart';
+import { SportDistributionChart } from './SportDistributionChart';
+import { 
+  mockDashboardStats, 
+  mockMonthlyBetCounts, 
+  mockSportDistribution 
+} from '../data/mock-dashboard';
+
 export function HomePage() {
   return (
-    <div className="p-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {[1, 2, 3, 4].map((i) => (
-          <div key={i} className="border border-border rounded-lg p-6 bg-card">
-            <div className="h-4 w-24 bg-muted rounded mb-2" />
-            <div className="h-8 w-16 bg-muted rounded" />
-          </div>
-        ))}
+    <div className="p-6 space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <StatCard 
+          title="Winning Bet Amount" 
+          value={`$${mockDashboardStats.winningBetAmount.toLocaleString()}`}
+          icon={<Trophy className="h-8 w-8" weight="duotone" />}
+        />
+        <StatCard 
+          title="Won Bet Count" 
+          value={mockDashboardStats.wonBetCount.toString()}
+          icon={<TrendUp className="h-8 w-8" weight="duotone" />}
+        />
       </div>
 
-      <div className="mt-6 border border-border rounded-lg p-6 bg-card">
-        <div className="h-6 w-32 bg-muted rounded mb-4" />
-        <div className="h-48 bg-muted rounded" />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <BetCountChart data={mockMonthlyBetCounts} />
+        <SportDistributionChart data={mockSportDistribution} />
       </div>
     </div>
   );
