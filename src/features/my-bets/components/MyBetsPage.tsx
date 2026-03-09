@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { FadersHorizontal } from '@phosphor-icons/react';
 import { PointsHeader } from './PointsHeader';
+import { FilterTabs } from './FilterTabs';
 import { BetCard } from './BetCard';
 import { BetDetailsSheet } from './BetDetailsSheet';
 import { mockBets } from '../data/mock-bets';
-import { useBetFilterStore } from '../store/bet-filter-store';
-import type { Bet } from '../types/bet';
+import type { Bet, BetFilter } from '../types/bet';
 
 export function MyBetsPage() {
-  const activeFilter = useBetFilterStore((state) => state.activeFilter);
+  const [activeFilter, setActiveFilter] = useState<BetFilter>('ALL');
   const [selectedBet, setSelectedBet] = useState<Bet | null>(null);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
 
@@ -29,6 +29,9 @@ export function MyBetsPage() {
   return (
     <div className="flex flex-col">
       <PointsHeader />
+      <div className="sticky top-0 z-20">
+        <FilterTabs activeFilter={activeFilter} onFilterChange={setActiveFilter} />
+      </div>
 
       <div className="p-4 space-y-3 pb-28">
         {filteredBets.length > 0 ? (

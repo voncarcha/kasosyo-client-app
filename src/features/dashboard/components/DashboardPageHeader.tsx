@@ -1,7 +1,6 @@
 import { Sun, Moon } from '@phosphor-icons/react';
 import { useUIStore } from '@/store/ui-store';
 import { useLocation } from '@tanstack/react-router';
-import { HeaderFilterTabs } from '@/features/my-bets/components/HeaderFilterTabs';
 
 const pageInfo: Record<string, { title: string; description: string }> = {
   '/home': { title: 'Home', description: 'Welcome to your dashboard' },
@@ -14,20 +13,23 @@ export function DashboardPageHeader() {
   const { theme, setTheme } = useUIStore();
   const location = useLocation();
   const current = pageInfo[location.pathname] || { title: 'Dashboard', description: '' };
-  const isMyBets = location.pathname === '/my-bets';
 
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
   return (
-    <header className="sticky top-0 z-30 border-b border-border bg-card px-4 flex items-center justify-between shrink-0 h-14">
-      <div className="flex items-center gap-4 min-w-0">
-        <h2 className="text-lg font-semibold text-foreground whitespace-nowrap">{current.title}</h2>
-        {isMyBets && <HeaderFilterTabs />}
+    <header className="sticky top-0 z-30 h-16 border-b border-border bg-card px-4 flex items-center justify-between shrink-0">
+      <div className="flex items-center gap-4">
+        <div>
+          <h2 className="text-lg font-semibold text-foreground">{current.title}</h2>
+          {current.description && (
+            <p className="text-xs text-muted-foreground">{current.description}</p>
+          )}
+        </div>
       </div>
 
-      <div className="flex items-center gap-2 shrink-0">
+      <div className="flex items-center gap-2">
         <button
           onClick={toggleTheme}
           className="p-2 rounded-md hover:bg-accent transition-colors"

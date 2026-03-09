@@ -35,7 +35,7 @@ export function SettingsPage() {
   };
 
   return (
-    <div className="p-6">
+    <div className="p-6 pb-28">
       <div className="max-w-2xl">
         <h1 className="text-2xl font-bold text-foreground mb-6">Settings</h1>
 

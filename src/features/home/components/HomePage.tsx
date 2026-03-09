@@ -10,7 +10,7 @@ import {
 
 export function HomePage() {
   return (
-    <div className="p-6 space-y-6">
+    <div className="p-6 space-y-6 pb-28">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <StatCard 
           title="Winning Bet Amount" 
