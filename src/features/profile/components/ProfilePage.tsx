@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { UserCircle, Envelope, Phone, IdentificationBadge } from '@phosphor-icons/react';
+import { UserCircleIcon, EnvelopeIcon, PhoneIcon, IdentificationBadgeIcon } from '@phosphor-icons/react';
 import { useAuthStore } from '@/features/auth/store/auth-store';
 import { ProfileOverview } from './ProfileOverview';
 import { Button } from '@/components/ui/button';
@@ -90,7 +90,7 @@ export function ProfilePage() {
             <Input
               value={formData.firstName}
               onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-              leftIcon={<UserCircle className="h-4 w-4" />}
+              leftIcon={<UserCircleIcon className="h-4 w-4" />}
               disabled={isSaving}
             />
           </div>
@@ -100,7 +100,7 @@ export function ProfilePage() {
             <Input
               value={formData.lastName}
               onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-              leftIcon={<UserCircle className="h-4 w-4" />}
+              leftIcon={<UserCircleIcon className="h-4 w-4" />}
               disabled={isSaving}
             />
           </div>
@@ -109,7 +109,7 @@ export function ProfilePage() {
             <label className="text-sm font-medium text-foreground">User ID</label>
             <Input
               value={user.id}
-              leftIcon={<IdentificationBadge className="h-4 w-4" />}
+              leftIcon={<IdentificationBadgeIcon className="h-4 w-4" />}
               disabled
             />
           </div>
@@ -118,7 +118,7 @@ export function ProfilePage() {
             <label className="text-sm font-medium text-foreground">Email</label>
             <Input
               value={user.email}
-              leftIcon={<Envelope className="h-4 w-4" />}
+              leftIcon={<EnvelopeIcon className="h-4 w-4" />}
               disabled
             />
           </div>
@@ -129,7 +129,7 @@ export function ProfilePage() {
               <div className="flex-1">
                 <Input
                   value={user.phone || 'Not set'}
-                  leftIcon={<Phone className="h-4 w-4" />}
+                  leftIcon={<PhoneIcon className="h-4 w-4" />}
                   disabled
                 />
               </div>

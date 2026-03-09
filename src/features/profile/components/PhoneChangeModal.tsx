@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Phone } from '@phosphor-icons/react';
+import { PhoneIcon } from '@phosphor-icons/react';
 import { Dialog } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -62,7 +62,7 @@ export function PhoneChangeModal({ isOpen, onClose, onConfirm, currentPhone }: P
               setError('');
             }}
             placeholder="+1 (555) 123-4567"
-            leftIcon={<Phone className="h-4 w-4" />}
+            leftIcon={<PhoneIcon className="h-4 w-4" />}
             error={error}
           />
         </div>

@@ -1,4 +1,4 @@
-import { Trophy, TrendUp } from '@phosphor-icons/react';
+import { TrophyIcon, TrendUpIcon } from '@phosphor-icons/react';
 import { StatCard } from './StatCard';
 import { BetCountChart } from './BetCountChart';
 import { SportDistributionChart } from './SportDistributionChart';
@@ -15,12 +15,12 @@ export function HomePage() {
         <StatCard 
           title="Winning Bet Amount" 
           value={`$${mockDashboardStats.winningBetAmount.toLocaleString()}`}
-          icon={<Trophy className="h-8 w-8" weight="duotone" />}
+          icon={<TrophyIcon className="h-8 w-8" weight="duotone" />}
         />
         <StatCard 
           title="Won Bet Count" 
           value={mockDashboardStats.wonBetCount.toString()}
-          icon={<TrendUp className="h-8 w-8" weight="duotone" />}
+          icon={<TrendUpIcon className="h-8 w-8" weight="duotone" />}
         />
       </div>
 

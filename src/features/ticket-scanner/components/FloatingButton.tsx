@@ -1,4 +1,4 @@
-import { Plus } from '@phosphor-icons/react';
+import { PlusIcon } from '@phosphor-icons/react';
 import { useTicketScannerStore } from '../store/ticket-scanner-store';
 import { cn } from '@/lib/utils/cn';
 
@@ -18,7 +18,7 @@ export function FloatingButton() {
       )}
       aria-label="Add Ticket"
     >
-      <Plus className="h-6 w-6" weight="bold" />
+      <PlusIcon className="h-6 w-6" weight="bold" />
       <span className="hidden lg:inline text-sm font-medium">Add Ticket</span>
     </button>
   );

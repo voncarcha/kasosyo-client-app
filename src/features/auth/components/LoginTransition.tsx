@@ -1,4 +1,4 @@
-import { CheckCircle, Spinner, UserCircle } from '@phosphor-icons/react';
+import { CheckCircleIcon, SpinnerIcon, UserCircleIcon } from '@phosphor-icons/react';
 import type { LoginStep } from '../types/auth';
 
 interface LoginTransitionProps {
@@ -12,7 +12,7 @@ export function LoginTransition({ step }: LoginTransitionProps) {
         {step === 'authenticating' && (
           <div className="text-center space-y-4">
             <div className="flex justify-center">
-              <Spinner className="h-12 w-12 text-primary animate-spin" />
+              <SpinnerIcon className="h-12 w-12 text-primary animate-spin" />
             </div>
             <div>
               <h3 className="text-lg font-semibold text-foreground">Authenticating</h3>
@@ -24,7 +24,7 @@ export function LoginTransition({ step }: LoginTransitionProps) {
         {step === 'loading-permissions' && (
           <div className="text-center space-y-4">
             <div className="flex justify-center">
-              <UserCircle className="h-12 w-12 text-primary animate-pulse" />
+              <UserCircleIcon className="h-12 w-12 text-primary animate-pulse" />
             </div>
             <div>
               <h3 className="text-lg font-semibold text-foreground">Loading Permissions</h3>
@@ -36,7 +36,7 @@ export function LoginTransition({ step }: LoginTransitionProps) {
         {step === 'success' && (
           <div className="text-center space-y-4">
             <div className="flex justify-center">
-              <CheckCircle className="h-12 w-12 text-green-500" weight="fill" />
+              <CheckCircleIcon className="h-12 w-12 text-green-500" weight="fill" />
             </div>
             <div>
               <h3 className="text-lg font-semibold text-foreground">Success!</h3>

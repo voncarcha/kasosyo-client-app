@@ -1,5 +1,5 @@
 import { useEffect, useRef, useCallback } from 'react';
-import { X, Camera, Spinner } from '@phosphor-icons/react';
+import { XIcon, CameraIcon, SpinnerIcon } from '@phosphor-icons/react';
 import { Html5Qrcode } from 'html5-qrcode';
 import { useTicketScannerStore } from '../store/ticket-scanner-store';
 import { cn } from '@/lib/utils/cn';
@@ -94,7 +94,7 @@ export function QRScannerModal() {
       >
         <div className="flex items-center justify-between p-4 border-b border-border">
           <div className="flex items-center gap-2">
-            <Camera className="h-5 w-5 text-primary" weight="fill" />
+            <CameraIcon className="h-5 w-5 text-primary" weight="fill" />
             <h3 className="text-lg font-semibold text-foreground">Scan Ticket QR Code</h3>
           </div>
           <button
@@ -102,7 +102,7 @@ export function QRScannerModal() {
             className="p-2 -mr-2 rounded-full hover:bg-muted transition-colors"
             aria-label="Close scanner"
           >
-            <X className="h-5 w-5 text-muted-foreground" />
+            <XIcon className="h-5 w-5 text-muted-foreground" />
           </button>
         </div>
 
@@ -123,7 +123,7 @@ export function QRScannerModal() {
 
           {isScanning && (
             <div className="mt-4 flex items-center justify-center gap-2 text-muted-foreground">
-              <Spinner className="h-4 w-4 animate-spin" />
+              <SpinnerIcon className="h-4 w-4 animate-spin" />
               <span className="text-sm">Scanning...</span>
             </div>
           )}

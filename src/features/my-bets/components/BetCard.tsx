@@ -1,4 +1,4 @@
-import { CaretRight } from '@phosphor-icons/react';
+import { CaretRightIcon } from '@phosphor-icons/react';
 import { cn } from '@/lib/utils/cn';
 import type { Bet, BetStatus } from '../types/bet';
 
@@ -88,7 +88,7 @@ export function BetCard({ bet, onSeeDetails }: BetCardProps) {
           className="flex items-center gap-1 py-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
         >
           See Details
-          <CaretRight className="h-4 w-4" weight="bold" />
+          <CaretRightIcon className="h-4 w-4" weight="bold" />
         </button>
       </div>
     </div>

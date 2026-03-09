@@ -1,4 +1,4 @@
-import { Coin } from '@phosphor-icons/react';
+import { CoinIcon } from '@phosphor-icons/react';
 import type { User } from '../types/profile';
 import { getUserInitials, getMembershipTierColor, getMembershipTierLabel } from '../types/profile';
 
@@ -27,7 +27,7 @@ export function ProfileOverview({ user }: ProfileOverviewProps) {
         </span>
 
         <div className="flex items-center gap-2">
-          <Coin className="h-5 w-5 text-primary" weight="fill" />
+          <CoinIcon className="h-5 w-5 text-primary" weight="fill" />
           <span className="text-2xl font-bold text-foreground">
             {user.points.toLocaleString()}
           </span>

@@ -1,4 +1,4 @@
-import { X } from '@phosphor-icons/react';
+import { XIcon } from '@phosphor-icons/react';
 import { cn } from '@/lib/utils/cn';
 import { useEffect } from 'react';
 
@@ -56,7 +56,7 @@ export function Dialog({ isOpen, onClose, title, children, className }: DialogPr
               onClick={onClose}
               className="p-2 -mr-2 rounded-full hover:bg-muted transition-colors"
             >
-              <X className="h-5 w-5 text-muted-foreground" />
+              <XIcon className="h-5 w-5 text-muted-foreground" />
             </button>
           </div>
 

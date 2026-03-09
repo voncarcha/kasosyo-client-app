@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { SignOut, Sun, Clock, LockSimple } from '@phosphor-icons/react';
+import { SignOutIcon, SunIcon, ClockIcon, LockSimpleIcon } from '@phosphor-icons/react';
 import { useAuthStore } from '@/features/auth/store/auth-store';
 import { useUIStore } from '@/store/ui-store';
 import { useNavigate } from '@tanstack/react-router';
@@ -51,7 +51,7 @@ export function SettingsPage() {
 
         <div className="border border-border rounded-lg p-6 bg-card mt-6">
           <h2 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
-            <Sun className="h-5 w-5" />
+            <SunIcon className="h-5 w-5" />
             Appearance
           </h2>
           <div className="space-y-4">
@@ -70,7 +70,7 @@ export function SettingsPage() {
 
         <div className="border border-border rounded-lg p-6 bg-card mt-6">
           <h2 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
-            <Clock className="h-5 w-5" />
+            <ClockIcon className="h-5 w-5" />
             Preferences
           </h2>
           <div className="space-y-4">
@@ -89,7 +89,7 @@ export function SettingsPage() {
 
         <div className="border border-border rounded-lg p-6 bg-card mt-6">
           <h2 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
-            <LockSimple className="h-5 w-5" />
+            <LockSimpleIcon className="h-5 w-5" />
             Security
           </h2>
           <div className="space-y-4">
@@ -115,7 +115,7 @@ export function SettingsPage() {
             variant="outline"
             className="flex items-center gap-2"
           >
-            <SignOut className="h-4 w-4" />
+            <SignOutIcon className="h-4 w-4" />
             Sign Out
           </Button>
         </div>

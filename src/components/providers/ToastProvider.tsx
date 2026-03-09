@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useCallback, ReactNode } from 'react';
-import { X, CheckCircle, Warning, Info, WarningOctagon } from '@phosphor-icons/react';
+import { XIcon, CheckCircleIcon, WarningIcon, InfoIcon, WarningOctagonIcon } from '@phosphor-icons/react';
 
 export type ToastType = 'success' | 'error' | 'warning' | 'info';
 
@@ -42,10 +42,10 @@ export function ToastProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const icons = {
-    success: <CheckCircle className="w-5 h-5 text-green-500" weight="fill" />,
-    error: <WarningOctagon className="w-5 h-5 text-red-500" weight="fill" />,
-    warning: <Warning className="w-5 h-5 text-yellow-500" weight="fill" />,
-    info: <Info className="w-5 h-5 text-blue-500" weight="fill" />,
+    success: <CheckCircleIcon className="w-5 h-5 text-green-500" weight="fill" />,
+    error: <WarningOctagonIcon className="w-5 h-5 text-red-500" weight="fill" />,
+    warning: <WarningIcon className="w-5 h-5 text-yellow-500" weight="fill" />,
+    info: <InfoIcon className="w-5 h-5 text-blue-500" weight="fill" />,
   };
 
   const bgColors = {
@@ -70,7 +70,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
               onClick={() => removeToast(toast.id)}
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
-              <X className="w-4 h-4" />
+              <XIcon className="w-4 h-4" />
             </button>
           </div>
         ))}

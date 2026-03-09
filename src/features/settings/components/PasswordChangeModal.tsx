@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Lock } from '@phosphor-icons/react';
+import { LockIcon } from '@phosphor-icons/react';
 import { Dialog } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -86,7 +86,7 @@ export function PasswordChangeModal({ isOpen, onClose, onSuccess }: PasswordChan
               setErrors((prev) => ({ ...prev, oldPassword: '' }));
             }}
             placeholder="Enter current password"
-            leftIcon={<Lock className="h-4 w-4" />}
+            leftIcon={<LockIcon className="h-4 w-4" />}
             error={errors.oldPassword}
             disabled={isLoading}
           />
@@ -102,7 +102,7 @@ export function PasswordChangeModal({ isOpen, onClose, onSuccess }: PasswordChan
               setErrors((prev) => ({ ...prev, newPassword: '' }));
             }}
             placeholder="Enter new password"
-            leftIcon={<Lock className="h-4 w-4" />}
+            leftIcon={<LockIcon className="h-4 w-4" />}
             error={errors.newPassword}
             disabled={isLoading}
           />
@@ -118,7 +118,7 @@ export function PasswordChangeModal({ isOpen, onClose, onSuccess }: PasswordChan
               setErrors((prev) => ({ ...prev, confirmPassword: '' }));
             }}
             placeholder="Confirm new password"
-            leftIcon={<Lock className="h-4 w-4" />}
+            leftIcon={<LockIcon className="h-4 w-4" />}
             error={errors.confirmPassword}
             disabled={isLoading}
           />

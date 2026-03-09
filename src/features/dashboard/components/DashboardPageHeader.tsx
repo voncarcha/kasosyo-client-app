@@ -1,4 +1,4 @@
-import { Sun, Moon } from '@phosphor-icons/react';
+import { SunIcon, MoonIcon } from '@phosphor-icons/react';
 import { useUIStore } from '@/store/ui-store';
 import { useLocation } from '@tanstack/react-router';
 
@@ -36,9 +36,9 @@ export function DashboardPageHeader() {
           aria-label="Toggle theme"
         >
           {theme === 'light' ? (
-            <Moon className="h-5 w-5" />
+            <MoonIcon className="h-5 w-5" />
           ) : (
-            <Sun className="h-5 w-5" />
+            <SunIcon className="h-5 w-5" />
           )}
         </button>
       </div>

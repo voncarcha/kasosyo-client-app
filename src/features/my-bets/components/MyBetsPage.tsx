@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FadersHorizontal } from '@phosphor-icons/react';
+import { FadersHorizontalIcon } from '@phosphor-icons/react';
 import { PointsHeader } from './PointsHeader';
 import { FilterTabs } from './FilterTabs';
 import { BetCard } from './BetCard';
@@ -40,7 +40,7 @@ export function MyBetsPage() {
           ))
         ) : (
           <div className="flex flex-col items-center justify-center py-16 text-center">
-            <FadersHorizontal className="h-12 w-12 text-muted-foreground mb-4" />
+            <FadersHorizontalIcon className="h-12 w-12 text-muted-foreground mb-4" />
             <p className="text-muted-foreground">No bets found</p>
             <p className="text-sm text-muted-foreground/70 mt-1">
               Try selecting a different filter

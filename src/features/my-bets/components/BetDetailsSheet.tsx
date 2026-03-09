@@ -1,4 +1,4 @@
-import { X } from '@phosphor-icons/react';
+import { XIcon } from '@phosphor-icons/react';
 import { cn } from '@/lib/utils/cn';
 import type { Bet, BetStatus, BetSelection } from '../types/bet';
 
@@ -94,7 +94,7 @@ export function BetDetailsSheet({ bet, isOpen, onClose }: BetDetailsSheetProps) 
             onClick={onClose}
             className="p-2 -mr-2 rounded-full hover:bg-muted transition-colors"
           >
-            <X className="h-5 w-5 text-muted-foreground" />
+            <XIcon className="h-5 w-5 text-muted-foreground" />
           </button>
         </div>
 
@@ -172,7 +172,7 @@ export function BetDetailsSheet({ bet, isOpen, onClose }: BetDetailsSheetProps) 
               onClick={onClose}
               className="p-2 -mr-2 rounded-full hover:bg-muted transition-colors"
             >
-              <X className="h-5 w-5 text-muted-foreground" />
+              <XIcon className="h-5 w-5 text-muted-foreground" />
             </button>
           </div>
 

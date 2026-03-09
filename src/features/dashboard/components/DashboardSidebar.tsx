@@ -1,4 +1,4 @@
-import { SignOut, List } from '@phosphor-icons/react';
+import { SignOutIcon, ListIcon } from '@phosphor-icons/react';
 import { Link, useLocation, useNavigate } from '@tanstack/react-router';
 import { cn } from '@/lib/utils/cn';
 import { useUIStore } from '@/store/ui-store';
@@ -31,7 +31,7 @@ export function DashboardSidebar() {
           onClick={toggleSidebar}
           className="p-2 rounded-md hover:bg-accent transition-colors"
         >
-          <List className={cn("h-5 w-5 transition-transform", !sidebarExpanded && "rotate-180")} />
+          <ListIcon className={cn("h-5 w-5 transition-transform", !sidebarExpanded && "rotate-180")} />
         </button>
       </div>
 
@@ -73,7 +73,7 @@ export function DashboardSidebar() {
             !sidebarExpanded && 'justify-center',
           )}
         >
-          <SignOut className="h-5 w-5 flex-shrink-0" />
+          <SignOutIcon className="h-5 w-5 flex-shrink-0" />
           {sidebarExpanded && <span>Logout</span>}
         </button>
       </div>
