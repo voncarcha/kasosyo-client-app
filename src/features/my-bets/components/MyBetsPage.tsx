@@ -28,8 +28,10 @@ export function MyBetsPage() {
 
   return (
     <div className="flex flex-col">
-      <PointsHeader />
-      <FilterTabs activeFilter={activeFilter} onFilterChange={setActiveFilter} />
+      <div className="sticky top-16 z-20">
+        <PointsHeader />
+        <FilterTabs activeFilter={activeFilter} onFilterChange={setActiveFilter} />
+      </div>
 
       <div className="p-4 space-y-3 pb-28">
         {filteredBets.length > 0 ? (
