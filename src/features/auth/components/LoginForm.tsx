@@ -10,7 +10,7 @@ import { LoginTransition } from "./LoginTransition";
 export function LoginForm() {
   const navigate = useNavigate();
   const { addToast } = useToast();
-  const { login, loginStep, isAuthenticated } = useAuthStore();
+  const { login, loginStep } = useAuthStore();
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -35,7 +35,7 @@ export function LoginForm() {
       } else {
         addToast("error", "Invalid credentials");
       }
-    } catch (error) {
+    } catch {
       addToast("error", "Login failed. Please try again.");
     } finally {
       setIsLoading(false);

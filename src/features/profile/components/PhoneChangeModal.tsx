@@ -16,11 +16,12 @@ function isValidPhone(phone: string): boolean {
 }
 
 export function PhoneChangeModal({ isOpen, onClose, onConfirm, currentPhone }: PhoneChangeModalProps) {
-  const [phone, setPhone] = useState(currentPhone || '');
+  const [phone, setPhone] = useState('');
   const [error, setError] = useState('');
 
   useEffect(() => {
     if (isOpen) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setPhone(currentPhone || '');
       setError('');
     }

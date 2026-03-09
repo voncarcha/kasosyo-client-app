@@ -48,7 +48,7 @@ export function ProfilePage() {
       });
 
       addToast('success', 'Profile updated successfully');
-    } catch (error) {
+    } catch {
       addToast('error', 'Failed to update profile');
     } finally {
       setIsSaving(false);

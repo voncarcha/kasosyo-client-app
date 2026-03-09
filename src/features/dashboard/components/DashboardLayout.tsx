@@ -4,25 +4,20 @@ import { DashboardPageHeader } from './DashboardPageHeader';
 import { DashboardSkeleton } from './DashboardSkeleton';
 import { DashboardBottomNav } from './DashboardBottomNav';
 import { useAuthStore } from '@/features/auth/store/auth-store';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from '@tanstack/react-router';
 
 export function DashboardLayout() {
   const navigate = useNavigate();
   const { isAuthenticated } = useAuthStore();
-  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (isMounted && !isAuthenticated) {
+    if (!isAuthenticated) {
       navigate({ to: '/login' });
     }
-  }, [isMounted, isAuthenticated, navigate]);
+  }, [isAuthenticated, navigate]);
 
-  if (!isMounted || !isAuthenticated) {
+  if (!isAuthenticated) {
     return <DashboardSkeleton />;
   }
 
