@@ -28,8 +28,8 @@ export function MyBetsPage() {
 
   return (
     <div className="flex flex-col">
+      <PointsHeader />
       <div className="sticky top-16 z-20">
-        <PointsHeader />
         <FilterTabs activeFilter={activeFilter} onFilterChange={setActiveFilter} />
       </div>
 
