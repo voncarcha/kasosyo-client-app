@@ -27,26 +27,24 @@ export function MyBetsPage() {
   };
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col">
       <PointsHeader />
       <FilterTabs activeFilter={activeFilter} onFilterChange={setActiveFilter} />
 
-      <div className="flex-1 overflow-y-auto">
-        <div className="p-4 space-y-3 pb-28">
-          {filteredBets.length > 0 ? (
-            filteredBets.map((bet) => (
-              <BetCard key={bet.id} bet={bet} onSeeDetails={handleSeeDetails} />
-            ))
-          ) : (
-            <div className="flex flex-col items-center justify-center py-16 text-center">
-              <FadersHorizontal className="h-12 w-12 text-muted-foreground mb-4" />
-              <p className="text-muted-foreground">No bets found</p>
-              <p className="text-sm text-muted-foreground/70 mt-1">
-                Try selecting a different filter
-              </p>
-            </div>
-          )}
-        </div>
+      <div className="p-4 space-y-3 pb-28">
+        {filteredBets.length > 0 ? (
+          filteredBets.map((bet) => (
+            <BetCard key={bet.id} bet={bet} onSeeDetails={handleSeeDetails} />
+          ))
+        ) : (
+          <div className="flex flex-col items-center justify-center py-16 text-center">
+            <FadersHorizontal className="h-12 w-12 text-muted-foreground mb-4" />
+            <p className="text-muted-foreground">No bets found</p>
+            <p className="text-sm text-muted-foreground/70 mt-1">
+              Try selecting a different filter
+            </p>
+          </div>
+        )}
       </div>
 
       <BetDetailsSheet

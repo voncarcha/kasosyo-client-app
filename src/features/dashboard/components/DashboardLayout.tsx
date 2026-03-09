@@ -26,12 +26,10 @@ export function DashboardLayout() {
     <div className="h-screen overflow-hidden bg-background">
       <div className="flex flex-col lg:flex-row h-full">
         <DashboardSidebar />
-        <div className="flex-1 flex flex-col overflow-hidden pb-16 lg:pb-0">
+        <div className="flex-1 flex flex-col overflow-hidden">
           <DashboardPageHeader />
-          <main className="flex-1 overflow-hidden">
-            <div className="h-full overflow-y-auto">
-              <Outlet />
-            </div>
+          <main className="flex-1 overflow-y-auto pb-16 lg:pb-0">
+            <Outlet />
           </main>
         </div>
       </div>
