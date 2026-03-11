@@ -13,15 +13,15 @@ interface StepIndicatorProps {
 
 export function StepIndicator({ steps, currentStep }: StepIndicatorProps) {
   return (
-    <div className="w-full">
-      <div className="flex items-center justify-between">
+    <div className="w-full flex justify-center">
+      <div className="flex items-center">
         {steps.map((step, index) => {
           const isCompleted = step.number < currentStep;
           const isActive = step.number === currentStep;
           const isLast = index === steps.length - 1;
 
           return (
-            <div key={step.number} className="flex items-center flex-1">
+            <div key={step.number} className="flex items-center">
               <div className="flex flex-col items-center">
                 <div
                   className={cn(
@@ -49,7 +49,7 @@ export function StepIndicator({ steps, currentStep }: StepIndicatorProps) {
               {!isLast && (
                 <div
                   className={cn(
-                    'flex-1 h-0.5 mx-2 mt-[-20px]',
+                    'w-12 h-0.5 mx-3 self-start mt-4',
                     isCompleted ? 'bg-primary' : 'bg-muted'
                   )}
                 />
