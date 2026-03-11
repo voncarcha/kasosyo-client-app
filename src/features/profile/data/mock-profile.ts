@@ -6,6 +6,6 @@ export const MOCK_USER: User = {
   lastName: 'Doe',
   email: 'john.doe@example.com',
   phone: '+1 (555) 123-4567',
-  points: 2450,
+  points: 12250,
   membershipTier: 'silver',
 };

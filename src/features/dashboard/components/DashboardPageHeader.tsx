@@ -7,12 +7,13 @@ const pageInfo: Record<string, { title: string; description: string }> = {
   '/profile': { title: 'Profile', description: 'Manage your account settings' },
   '/my-bets': { title: 'My Bets', description: 'View your betting history' },
   '/settings': { title: 'Settings', description: 'Manage your preferences' },
+  '/cash-out': { title: 'Cash out', description: 'Withdraw your winnings' },
 };
 
 export function DashboardPageHeader() {
   const { theme, setTheme } = useUIStore();
   const location = useLocation();
-  const current = pageInfo[location.pathname] || { title: 'Dashboard', description: '' };
+  const current = pageInfo[location.pathname] || { title: '', description: '' };
 
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
@@ -21,12 +22,14 @@ export function DashboardPageHeader() {
   return (
     <header className="sticky top-0 z-30 h-16 border-b border-border bg-card px-4 flex items-center justify-between shrink-0">
       <div className="flex items-center gap-4">
-        <div>
-          <h2 className="text-lg font-semibold text-foreground">{current.title}</h2>
-          {current.description && (
-            <p className="text-xs text-muted-foreground">{current.description}</p>
-          )}
-        </div>
+        {current.title && (
+          <div>
+            <h2 className="text-lg font-semibold text-foreground">{current.title}</h2>
+            {current.description && (
+              <p className="text-xs text-muted-foreground">{current.description}</p>
+            )}
+          </div>
+        )}
       </div>
 
       <div className="flex items-center gap-2">

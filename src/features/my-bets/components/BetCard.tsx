@@ -51,7 +51,7 @@ export function BetCard({ bet, onSeeDetails }: BetCardProps) {
       <div className="space-y-2 mb-4">
         <div className="flex justify-between text-sm">
           <span className="text-muted-foreground">Bet Amount</span>
-          <span className="font-medium text-foreground">${formatCurrency(bet.amount)}</span>
+          <span className="font-medium text-foreground">₱{formatCurrency(bet.amount)}</span>
         </div>
         <div className="flex justify-between text-sm">
           <span className="text-muted-foreground">Odd</span>
@@ -63,7 +63,7 @@ export function BetCard({ bet, onSeeDetails }: BetCardProps) {
               {bet.status === 'CASHED_OUT' ? 'Cashed Out' : 'Won Amount'}
             </span>
             <span className="font-semibold text-green-600 dark:text-green-400">
-              ${formatCurrency(bet.wonAmount)}
+              ₱{formatCurrency(bet.wonAmount)}
             </span>
           </div>
         )}

@@ -12,21 +12,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   }, [theme]);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const stored = localStorage.getItem('ui-storage');
     
     if (!stored) {
-      setTheme(mediaQuery.matches ? 'dark' : 'light');
+      setTheme('light');
     }
-
-    const handleChange = (e: MediaQueryListEvent) => {
-      if (!localStorage.getItem('ui-storage')) {
-        setTheme(e.matches ? 'dark' : 'light');
-      }
-    };
-
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
   }, [setTheme]);
 
   return <>{children}</>;

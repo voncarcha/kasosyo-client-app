@@ -116,7 +116,7 @@ export function BetDetailsSheet({ bet, isOpen, onClose }: BetDetailsSheetProps) 
           <div className="border border-border rounded-lg p-4 bg-muted/30 space-y-3">
             <div className="flex justify-between">
               <span className="text-sm text-muted-foreground">Bet Amount</span>
-              <span className="font-medium text-foreground">${formatCurrency(bet.amount)}</span>
+              <span className="font-medium text-foreground">₱{formatCurrency(bet.amount)}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-sm text-muted-foreground">Total Odd</span>
@@ -128,7 +128,7 @@ export function BetDetailsSheet({ bet, isOpen, onClose }: BetDetailsSheetProps) 
                   {bet.status === 'CASHED_OUT' ? 'Cashed Out' : 'Won Amount'}
                 </span>
                 <span className="font-semibold text-green-600 dark:text-green-400">
-                  ${formatCurrency(bet.wonAmount)}
+                  ₱{formatCurrency(bet.wonAmount)}
                 </span>
               </div>
             )}
@@ -194,7 +194,7 @@ export function BetDetailsSheet({ bet, isOpen, onClose }: BetDetailsSheetProps) 
             <div className="border border-border rounded-lg p-4 bg-muted/30 space-y-3">
               <div className="flex justify-between">
                 <span className="text-sm text-muted-foreground">Bet Amount</span>
-                <span className="font-medium text-foreground">${formatCurrency(bet.amount)}</span>
+                <span className="font-medium text-foreground">₱{formatCurrency(bet.amount)}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-sm text-muted-foreground">Total Odd</span>
@@ -206,7 +206,7 @@ export function BetDetailsSheet({ bet, isOpen, onClose }: BetDetailsSheetProps) 
                     {bet.status === 'CASHED_OUT' ? 'Cashed Out' : 'Won Amount'}
                   </span>
                   <span className="font-semibold text-green-600 dark:text-green-400">
-                    ${formatCurrency(bet.wonAmount)}
+                    ₱{formatCurrency(bet.wonAmount)}
                   </span>
                 </div>
               )}
